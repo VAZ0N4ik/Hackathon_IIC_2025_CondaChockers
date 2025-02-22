@@ -55,7 +55,7 @@ function RoomSchedule() {
 
   const fetchRoomData = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/cabinets/${id}`);
+      const response = await fetch(`/api/cabinets/${id}`);
       if (!response.ok) throw new Error('Кабинет не найден');
       const data = await response.json();
       setRoom(data);
@@ -69,7 +69,7 @@ function RoomSchedule() {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://localhost:8000/cabinets/${id}/schedule?date=${selectedDate}`
+        `/api/cabinets/${id}/schedule?date=${selectedDate}`
       );
       if (!response.ok) throw new Error('Не удалось загрузить расписание');
       const data = await response.json();
@@ -120,7 +120,7 @@ function RoomSchedule() {
 
       const pairTime = pairs[pairNum - 1].time.split('-');
 
-      const pairResponse = await fetch('http://localhost:8000/pairs/', {
+      const pairResponse = await fetch('/api/pairs/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ function RoomSchedule() {
 
       const pairData = await pairResponse.json();
 
-      const bookingResponse = await fetch(`http://localhost:8000/pairs_cabinets/`, {
+      const bookingResponse = await fetch(`/api/pairs_cabinets/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

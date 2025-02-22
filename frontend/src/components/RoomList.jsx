@@ -36,7 +36,7 @@ function RoomList() {
   const fetchRooms = async () => {
     try {
       setLoading(true);
-      let url = 'http://localhost:8000/cabinets/';
+      let url = '/api/cabinets/';
       if (selectedDate || selectedPair) {
         const params = new URLSearchParams();
         if (selectedDate) params.append('date', selectedDate);
