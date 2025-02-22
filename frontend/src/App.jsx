@@ -1,10 +1,10 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from 'components/Login';
-import RoomList from 'components/RoomList';
-import RoomSchedule from 'components/RoomSchedule';
-import { AuthProvider } from 'context/AuthContext';
-import Navbar from 'components/Navbar';
+import Login from './components/Login';
+import RoomList from './components/RoomList';
+import RoomSchedule from './components/RoomSchedule';
+import { AuthProvider } from './context/AuthContext';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
